@@ -6,6 +6,8 @@ framework:
         resource: "%kernel.root_dir%/config/routing_dev.yml"
         strict_requirements: true
     profiler: { only_exceptions: false }
+    templating:
+        engines: ['twig']
 
 web_profiler:
     toolbar: true
@@ -41,8 +43,7 @@ monolog:
         #    type:   chromephp
         #    level:  info
 
-assetic:
-    use_controller: true
-
-#swiftmailer:
-#    delivery_address: me@example.com
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"

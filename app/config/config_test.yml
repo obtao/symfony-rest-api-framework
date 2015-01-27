@@ -2,6 +2,8 @@ imports:
     - { resource: config_dev.yml }
 
 framework:
+    templating:
+        engines: ['twig']
     test: ~
     session:
         storage_id: session.storage.mock_file
@@ -11,3 +13,8 @@ framework:
 web_profiler:
     toolbar: false
     intercept_redirects: false
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
